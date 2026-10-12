@@ -1,0 +1,101 @@
+# 构建产物
+/build/
+/entry/build/
+/entry/.preview/
+/app/build/
+
+# 本地配置（含本机 SDK 路径，不应入库）
+local.properties
+.clangd
+.clang-format
+.clang-tidy
+**/clang-format.config
+
+# hvigor / ohpm
+.hvigor/
+.ohpm/
+.cxx/
+*.har
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# 本地工作目录（参考源码、构建日志、测试临时产物）
+/_work/
+/_test/*.log
+/_test/Core.ts
+/_test/SocketClient.ts
+/_test/result.json
+/_test/report.html
+
+# 签名材料（含私钥，绝不能入库）
+# 根目录 build-profile.json5 含明文签名口令，只保留 build-profile.json5.example 占位模板
+/build-profile.json5
+/_test/signing-local/
+*.p12
+*.p7b
+*.csr
+/entry/sign/
+/entry/OpenHarmonyProfile.json
+
+# 绝对不要装 node_modules：
+# DevEco 的 hvigor 期望依赖走 oh_modules/ + ~/.hvigor，
+# 工程里多出 node_modules 会让 Sync 报
+# "00302013 The root node is not yet available for build"。
+# 详见 docs/SIGNING.md
+/node_modules/
+/hvigorw.js
+
+# ── 交付副本清理（2026-10-07）──
+# 测试产物（截图/编译日志，一次性，可随时重生成）
+/_test/_产物/
+/_test/_trash/
+/_test/_敏感待清/
+# 一次性分析脚本（依赖已删除的安卓逆向产物）
+/_test/_一次性/
+# 真机调试归档（截图含内网 IP/账号信息，README 红线：不入库）
+/_test/debug-*/
+# 逆向产物：第三方 APK 的解包结果，不入库
+/test/apk/
+
+# hermes P1/P2 备份，不入库
+/.backups/
+
+# hermes 真机复验临时工作目录（含设备回拉的 rdb 副本与注入密文，绝不入库）
+/.rt/
+
+# 鸿蒙依赖库（等效 node_modules，由 ohpm 安装，勿入库）
+/oh_modules/
+
+# ── _test/ 公开发布范围（2026-10-10 起）──
+# 公开白名单：回归测试套件 + 抽取配置 + README（已脱敏），clone 后先跑 sync_all.mjs 即可复现
+# 其余（探针、调试脚本、日志、快照、生成物、凭据、内网信息）一律忽略，不得入库
+/_test/*
+!/_test/README.md
+!/_test/run.ts
+!/_test/run_sse.ts
+!/_test/run_socket.ts
+!/_test/run_ext.ts
+!/_test/run_sqlguard.ts
+!/_test/run_uiguard.ts
+!/_test/run_anthropic.ts
+!/_test/run_endpoint_guard.mjs
+!/_test/sync_all.mjs
+!/_test/extract.mjs
+!/_test/extract_anthropic.mjs
+!/_test/extract-socket.json
+
+# 一次性备份目录
+/_backup/
+
+# 本地构建日志
+/build_out.log
+/build_out_r2_*.log
+/build_out_cb*.log
+
+/build_out_dsh_cx.log
+
+# ���ؾ� git ��ʷ�鵵����δ������commit�������ر��飬�����ϴ���
+/.git.local-archive/

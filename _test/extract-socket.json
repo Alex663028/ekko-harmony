@@ -1,0 +1,20 @@
+{
+  "_comment": "src/out 用 <root>/ 前缀表示相对项目根，换目录也不会抽错源码（见 extract.mjs的 resolvePath）",
+  "src": "<root>/entry/src/main/ets/net/SocketClient.ets",
+  "out": "<root>/_test/SocketClient.ts",
+  "include": ["SSE", "Engine\\.IO", "协议编解码"],
+  "stopAtBanner": "SocketClientHooks",
+  "skip": ["class SocketBridge", "function bytesToString"],
+  "mustContain": [
+    "decodeFrame",
+    "encodeMessage",
+    "encodeConnect",
+    "encodeConnectAuth",
+    "eventNameOf",
+    "eventArgsOf",
+    "buildWsUrl",
+    "isCompleteJson"
+  ],
+  "minLength": 800,
+  "mustContainExtra": 0
+}

@@ -1,0 +1,44 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "brand",
+      "value": "#1677FF"
+    },
+    {
+      "name": "brand_deep",
+      "value": "#0E5FD8"
+    },
+    {
+      "name": "bg_page",
+      "value": "#F5F6F8"
+    },
+    {
+      "name": "bg_card",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "text_primary",
+      "value": "#1A1A1A"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#61666E"
+    },
+    {
+      "name": "text_tertiary",
+      "value": "#9AA0A8"
+    },
+    {
+      "name": "danger",
+      "value": "#F53F3F"
+    },
+    {
+      "name": "success",
+      "value": "#00B42A"
+    }
+  ]
+}

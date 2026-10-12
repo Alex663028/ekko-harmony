@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Ekko Studio HarmonyOS client"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Ekko Studio entry ability"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Ekko Studio"
+    }
+  ]
+}

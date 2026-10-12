@@ -1,0 +1,23 @@
+# 鸿蒙混淆规则（release 构建用）。
+#
+# 本工程默认 enable: false（见 entry/build-profile.json5），所以这个文件
+# 只是占位：文件必须存在，否则 release 构建会报
+# "The obfuscation rule file './obfuscation-rules.txt' cannot be found"。
+#
+# 若要开启混淆，把 build-profile.json5 里 arkOptions.obfuscation.ruleOptions.enable
+# 改成 true，然后在此追加规则。
+
+# ArkUI 组件的 build 链由框架反射调用，不可混淆
+-keep class **.build
+-keep class **.build(**
+
+# 自定义组件的属性名会被 UI 描述符按字符串查找
+-keep @component class ** { *; }
+
+# 领域模型需要 JSON 序列化，字段名不可改
+-keep class **.model.** { *; }
+-keep interface **.model.** { *; }
+
+# 网络层与仓库层按字段名拼 SQL / JSON
+-keep class **.data.** { *; }
+-keep class **.net.** { *; }

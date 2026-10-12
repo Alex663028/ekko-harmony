@@ -1,0 +1,60 @@
+{
+  // 项目级配置占位模板。
+  //
+  // ⚠⚠ 本文件是空模板，不包含任何签名材料。
+  //   请勿把真实的签名配置（证书路径、密钥口令、.p12 文件路径）
+  //   提交到 Git 仓库 —— 那等于泄露开发者账号的签名身份。
+  //
+  // 【如何生成本机的真实配置】
+  //   1. 把本文件复制为 build-profile.json5（同目录）
+  //   2. 用 DevEco Studio 打开本工程 →
+  //      File → Project Structure → Signing Configs →
+  //      勾选 "Automatically generate signature" → Apply
+  //   3. DevEco 会自动生成 signingConfigs 与 products.signingConfig 引用
+  //
+  // ⚠ build-profile.json5 已在 .gitignore 中，永远不会入库。
+  //
+  // compatibleSdkVersion 必须与本机 SDK 的「平台版本(API)」严格对应：
+  // 本机装的是 HarmonyOS 6.0.2 / API 22，所以写 "6.0.2(22)"。
+  // 写成 "6.0.0(22)" 会报
+  // "The platform version '6.0.0' and API version '22' ... do not match"。
+  "app": {
+    // ⚠ products 里的 "signingConfig": "default" 必须存在！
+    //   DevEco 的自动签名只会写 signingConfigs 数组，
+    //   不会自动往 product 里加引用。缺了它 hvigor 会静默跳过签名：
+    //     WARN: No signingConfig found for product default
+    //   然后只产出 entry-default-unsigned.hap（装机会失败）。
+    "signingConfigs": [],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "6.0.2(22)",
+        "runtimeOS": "HarmonyOS",
+        "targetSdkVersion": "6.0.2(22)"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

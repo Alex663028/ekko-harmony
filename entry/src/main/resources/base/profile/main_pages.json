@@ -1,0 +1,24 @@
+{
+  "src": [
+    "pages/LoginPage",
+    "pages/SessionListPage",
+    "pages/ChatPage",
+    "pages/GroupChatPage",
+    "pages/AgentManagerPage",
+    "pages/SettingsPage",
+    "pages/JobsPage",
+    "pages/SkillsPage",
+    "pages/PluginsPage",
+    "pages/McpPage",
+    "pages/KanbanPage",
+    "pages/UsagePage",
+    "pages/JourneyPage",
+    "pages/LogsPage",
+    "pages/FilesPage",
+    "pages/MemoryPage",
+    "pages/ProfilesPage",
+    "pages/ModelsPage",
+    "pages/WorkspacePage",
+    "pages/TerminalPage"
+  ]
+}

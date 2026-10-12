@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Ekko Studio HarmonyOS client"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Ekko Studio entry ability"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Ekko Studio"
+    },
+    {
+      "name": "reason_internet",
+      "value": "Used to connect to the LLM provider and sync workspace data"
+    },
+    {
+      "name": "reason_background",
+      "value": "Used to keep long-running agent replies streaming in background"
+    }
+  ]
+}

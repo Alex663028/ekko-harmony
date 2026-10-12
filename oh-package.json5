@@ -1,0 +1,10 @@
+{
+  "modelVersion": "6.0.2",
+  "name": "ekko-studio-harmony",
+  "version": "0.1.0",
+  "description": "Ekko Studio HarmonyOS client",
+  "dependencies": {},
+  "devDependencies": {
+    "@ohos/hypium": "1.0.19"
+  }
+}
